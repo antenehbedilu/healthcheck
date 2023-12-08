@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from routers import health
 
 #create an instance of FastAPI and customize metadata configurations
 app = FastAPI(
@@ -19,3 +20,6 @@ app = FastAPI(
             'url': 'https://raw.githubusercontent.com/antenehbedilu/healthcheck/main/LICENSE'
             }
         )
+
+#include the health router in the FastAPI application
+app.include_router(health.router)
